@@ -72,6 +72,12 @@ async function generateAndSetAvatar() {
         alert("Please enter an email address!");
         return;
     }
+
     let avatar = await generateAvatar(email);
-    document.getElementById("avatar").src = avatar;
+
+    // Set the avatar source and make it visible
+    let avatarImg = document.getElementById("avatar");
+    avatarImg.src = avatar;
+    avatarImg.style.display = "block"; // Show the image
 }
+
