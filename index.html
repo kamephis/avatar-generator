@@ -4,19 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG Avatar Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h2>SVG Avatar Generator</h2>
-    
-    <!-- Input field for entering an email address -->
-    <input type="email" id="emailInput" placeholder="Enter your email">
-    <button onclick="generateAndSetAvatar()">Generate Avatar</button>
-    <br><br>
-    
-    <!-- Placeholder for displaying the generated avatar -->
-    <img id="avatar" width="80" height="80" alt="Avatar" style="display: none;">
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-6">
 
-    <!-- Link to external JavaScript file -->
-    <script src="script.js"></script>
+    <div class="bg-white shadow-lg rounded-lg p-6 max-w-lg text-center">
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">SVG Avatar Generator</h2>
+        
+        <input type="email" id="emailInput" placeholder="Enter your email"
+            class="border border-gray-300 rounded-md p-2 w-full mb-4 focus:ring focus:ring-blue-300 outline-none">
+        
+        <button id="generateButton" 
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition">
+            Generate Avatar
+        </button>
+
+        <!-- Avatar Preview Section -->
+        <div class="mt-6 space-y-4">
+            <div class="flex justify-center space-x-4">
+                <!-- Circle Avatar -->
+                <div class="w-24 h-24 rounded-full overflow-hidden border border-gray-300 bg-gray-200">
+                    <img id="avatarCircle" class="w-full h-full hidden">
+                </div>
+                <!-- Square Avatar -->
+                <div class="w-24 h-24 border border-gray-300 bg-gray-200">
+                    <img id="avatarSquare" class="w-full h-full hidden">
+                </div>
+                <!-- Rounded Square Avatar -->
+                <div class="w-24 h-24 rounded-lg overflow-hidden border border-gray-300 bg-gray-200">
+                    <img id="avatarRounded" class="w-full h-full hidden">
+                </div>
+            </div>
+
+            <!-- Download Button -->
+            <button id="downloadButton" 
+                class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded hidden transition">
+                Download Avatar
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
